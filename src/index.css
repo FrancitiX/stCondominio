@@ -70,6 +70,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;
