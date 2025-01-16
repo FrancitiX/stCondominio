@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./../styles/components/Nav.module.css"
 
 function NavBar() {
   return (

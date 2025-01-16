@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/Nav-bar";
-import Footer from "../styles/components/Footer";
+import Footer from "../components/Footer";
 import styles from "./../styles/Home.module.css";
 import classNames from "classnames";
 
@@ -38,7 +38,10 @@ function Home() {
                 hic eum tempore. Inventore, veritatis autem.
               </p>
             </div>
-            <div></div>
+            <div>
+              <p>Ubicaión</p>
+              <p>No sé ayuda me sineto mal</p>
+            </div>
           </div>
         </div>
 
