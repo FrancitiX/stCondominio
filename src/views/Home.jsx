@@ -45,7 +45,19 @@ function Home() {
           </div>
         </div>
 
-        <section></section>
+        <section className={styles.container}>
+          <div className={`${styles.account} center`}>
+            <h3>Datos de cuenta</h3>
+            <div className={styles.data_account}>
+              <p>Nombre: <span>Usuario</span></p>
+              <p>Telefono: <span>3300000000</span></p>
+              <p>Sona: <span>Todos los condominios</span></p>
+              <p>Tipo de usuario: <span>Administrador</span></p>
+              <p>Estancia: <span>Anfitrion</span></p>
+            </div>
+          </div>
+        </section>
+        <section className={styles.container}></section>
       </main>
       <Footer />
     </>
