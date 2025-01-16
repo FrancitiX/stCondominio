@@ -3,27 +3,26 @@
 .inputContain {
     position: relative;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .inputContain_medio {
     position: relative;
     display: flex;
-    flex-direction: column;
     width: 48%;
     margin-bottom: 20px;
 }
 
-.inputContain .input {
+/* .inputContain .input {
     font-size: 15px;
     padding: 12px 10px;
     letter-spacing: 0.5px;
     color: var(--text);
     background: transparent;
-    border: 1px solid var(--detail2);
+    border: 1px solid var(--text);
+    border: 1px solid rgb(250, 250, 250);
     border-radius: 5px;
-}
+} */
 
 .inputContain_medio .input {
     font-size: 15px;
@@ -40,20 +39,21 @@
     padding: 12px 10px;
     width: 80.3%;
     letter-spacing: 0.5px;
-    color: var(--text);
+    color: rgb(255, 255, 255);
     background: transparent;
-    border: 1px solid var(--detail2);
+    /* border: 1px solid var(--text); */
+    border: 1px solid rgb(250, 250, 250);
     border-radius: 5px 0px 0px 5px;
 }
 
 .inputContain input:focus {
     outline: none;
-    border: 1px solid var(--detail);
+    /* border: 1px solid rgb(91, 120, 200); */
 }
 
 .inputContain_medio input:focus {
     outline: none;
-    border: 1px solid var(--detail);
+    /* border: 1px solid rgb(91, 120, 200); */
 }
 
 .inputContain label {
@@ -73,12 +73,12 @@
 .inputContain input:hover~label,
 .inputContain input:valid~label,
 .inputContain input:not([value=""])~label {
-    top: -8px;
+    top: -18px;
     left: 10px;
     padding: 0px 8px;
     font-size: 13px;
-    color: var(--text);
-    background: var(--bgColor);
+    /* color: var(--text); */
+    color: rgb(250, 250, 250);
 }
 
 .inputContain_medio label {
@@ -110,24 +110,27 @@
     position: relative;
 }
 
-.passwordVisible {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    width: 13%;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    border: 1px solid var(--detail2);
-    border-radius: 0px 5px 5px 0px;
+.passwordIcon {
     cursor: pointer;
 }
 
-.passwordVisible span {
+.iconVisible {
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    /* border: 1px solid var(--text); */
+    border: 1px solid rgb(250, 250, 250);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.iconVisible span {
     padding: 9px 10px;
     margin: 0;
-    color: var(--text);
+    /* color: var(--text); */
+    color: rgb(250, 250, 250);
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;

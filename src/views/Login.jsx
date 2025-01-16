@@ -27,7 +27,6 @@ function Login() {
               <div className={styles.form_group}>
                 <InputCell
                   type="tel"
-                  name="Número de celular"
                   id="userInput"
                   placeHolder="Usuario"
                   req={true}

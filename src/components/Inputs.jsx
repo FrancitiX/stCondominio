@@ -54,7 +54,7 @@ const InputUser = ({ type, name, id, placeHolder, req }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <div className={style.passwordVisible}>
+      <div className={style.iconVisible}>
         <span className="material-symbols-outlined">person</span>
       </div>
       <label htmlFor={id}>{placeHolder}</label>
@@ -81,7 +81,7 @@ const InputPassword = ({ name, id, placeHolder }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <div className={style.passwordVisible} onClick={passwordVisible}>
+      <div className={classNames(style.iconVisible, style.passwordIcon)} onClick={passwordVisible}>
         {visible ? (
           <span className="material-symbols-outlined">visibility</span> // Mostrar ícono de visibilidad
         ) : (
@@ -118,10 +118,10 @@ const InputCell = ({ type, name, id, placeHolder, req }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <div className={style.passwordVisible}>
+      <div className={style.iconVisible}>
         <span className="material-symbols-outlined">call</span>
       </div>
-      <label htmlFor={id}>{placeHolder}</label>
+      <label htmlFor={id}>Número de telefono</label>
     </div>
   );
 };
