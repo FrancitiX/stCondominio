@@ -70,7 +70,14 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.container}></section>
+        <section className={classNames(styles.container, styles.anfitrion)}>
+          <h3>Contacte con su anfitrión</h3>
+          <div className={classNames(styles.data_anfitrion)}>
+            <p>Anfitrión: <span>Anfitrion</span></p>
+            <p>correo: <span>anfitrion@gmail.com</span></p>
+            <p>Número de contacto: <span>3300000000</span></p>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
