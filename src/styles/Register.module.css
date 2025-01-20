@@ -1,0 +1,97 @@
+.background {
+    position: relative;
+    min-height: 86vh;
+    /* height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('./../assets/fondo_02.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.form { 
+    min-height: 70vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px var(--shadow);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.title {
+    color: rgb(91, 120, 200);
+    font-size: 30px;
+    margin: 0px 0px 50px;
+    filter: drop-shadow(0 0 15px var(--shadow2));
+}
+
+.formData {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.dbInputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.actions {
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions button {
+    font-weight: bold;
+    padding: 5px 25px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px var(--shadow);
+    border: 1px solid rgba(200, 200, 200);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cancel {
+    color: rgba(250, 250, 250);
+    background: rgb(200, 0, 0);
+}
+
+.save {
+    color: rgba(250, 250, 250);
+    background: var(--bgColor3);
+}
+
+.cancel:hover {
+    color: rgba(255, 255, 255);
+    background: rgb(150, 0, 0);
+}
+
+.save:hover {
+    color: rgb(255, 255, 255);
+    background: var(--specialText);
+}
