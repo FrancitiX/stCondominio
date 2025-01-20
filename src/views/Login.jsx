@@ -13,7 +13,7 @@ function Login() {
   const Login = async () => {
     const result = await Log_in(cellphone, password);
     if (result) {
-      navigate("/Home");
+      navigate("/home");
     } 
     // else {
     //   navigate("/home");

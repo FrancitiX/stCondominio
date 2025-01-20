@@ -22,7 +22,7 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const Home = () => {
-    navigate("/Home");
+    navigate("/home");
   };
 
   return (
