@@ -47,7 +47,10 @@
 }
 
 .monthPrice {
-  margin: 0 40px;
+  margin: 20px 40px;
+  box-shadow: 0 0 5px var(--shadow);
+  border: 1px solid rgb(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 .monthTitle h3 {
@@ -71,7 +74,7 @@
 
 .container {
   margin-bottom: 50px;
-  padding: 25px 280px;
+  padding: 25px 250px;
 }
 
 .account {

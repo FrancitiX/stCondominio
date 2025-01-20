@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     margin-bottom: 25px;
+    box-shadow: 0 0 10px var(--shadow2);
 }
 
 .inputContain_medio {
@@ -11,6 +12,7 @@
     display: flex;
     width: 48%;
     margin-bottom: 20px;
+    box-shadow: 0 0 10px var(--shadow);
 }
 
 /* .inputContain .input {
@@ -28,20 +30,23 @@
     font-size: 15px;
     padding: 12px 10px;
     letter-spacing: 0.5px;
-    color: var(--text);
+    color: rgb(255, 255, 255);
     background: transparent;
-    border: 1px solid var(--detail2);
+    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
+    border: 1px solid rgb(250, 250, 250);
+    /* border: 1px solid var(--detail2); */
     border-radius: 5px;
 }
 
 .inputContain .inputSession {
     font-size: 15px;
     padding: 12px 10px;
-    width: 80.3%;
+    width: 100%;
     letter-spacing: 0.5px;
     color: rgb(255, 255, 255);
     background: transparent;
     /* border: 1px solid var(--text); */
+    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
     border: 1px solid rgb(250, 250, 250);
     border-radius: 5px 0px 0px 5px;
 }
@@ -62,7 +67,8 @@
     left: 10px;
     padding: 12px 0;
     font-size: 15px;
-    color: rgb(200, 200, 200);
+    color: rgb(204, 207, 210);
+    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
     pointer-events: none;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
@@ -79,6 +85,7 @@
     font-size: 13px;
     /* color: var(--text); */
     color: rgb(250, 250, 250);
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
 }
 
 .inputContain_medio label {
@@ -87,7 +94,8 @@
     left: 10px;
     padding: 12px 0;
     font-size: 15px;
-    color: var(--text3);
+    color: rgb(204, 207, 210);
+    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
     pointer-events: none;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
@@ -98,12 +106,13 @@
 .inputContain_medio input:hover~label,
 .inputContain_medio input:valid~label,
 .inputContain_medio input:not([value=""])~label {
-    top: -8px;
+    top: -18px;
     left: 10px;
     padding: 0px 8px;
     font-size: 13px;
-    color: var(--text);
-    background: var(--bgColor);
+    color: rgb(250, 250, 250);
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+    /* color: var(--text); */
 }
 
 .passwordInput {
@@ -145,12 +154,11 @@
 
 .selectorContain label {
     position: absolute;
-    top: -10px;
+    top: -18px;
     left: 10px;
     padding: 0px 8px;
     font-size: 13px;
-    color: var(--text);
-    background: var(--bgColor);
+    color: rgb(250, 250, 250);
     pointer-events: none;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
@@ -159,10 +167,24 @@
 
 .Selector {
     font-size: 15px;
+    width: 100%;
     padding: 12px 10px;
     letter-spacing: 0.5px;
-    color: var(--text);
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
     background: transparent;
-    border: 1px solid var(--detail2);
+    box-shadow: 0 0 10px var(--shadow2);
+    border: 1px solid rgb(250, 250, 250);
+    /* border: 1px solid var(--detail2); */
     border-radius: 5px;
+}
+
+.Selector:focus {
+    outline: none;
+    /* border: 1px solid rgb(91, 120, 200); */
+}
+
+.Selector option {
+    background: rgb(105, 105, 105);
+    box-shadow: 0 0 10px var(--shadow);
 }

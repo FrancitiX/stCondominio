@@ -77,6 +77,11 @@ html {
   align-items: center;
 }
 
+.container {
+  margin-bottom: 50px;
+  padding: 25px 250px;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;
@@ -123,3 +128,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+@media screen and (max-width: 1300px) {
+  .container {
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .container {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}

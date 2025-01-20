@@ -2,8 +2,7 @@ import { useState } from "react";
 import style from "./../styles/components/Inputs.module.css";
 import classNames from "classnames";
 
-const InputDefault = ({ type, name, id, placeHolder, req }) => {
-  const [value, setValue] = useState("");
+const InputDefault = ({ type, name, id, placeHolder, req, value, change, readOnly }) => {
 
   return (
     <div className={style.inputContain}>
@@ -14,7 +13,8 @@ const InputDefault = ({ type, name, id, placeHolder, req }) => {
         id={id}
         required={req ? true : undefined}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={change}
+        readOnly={readOnly}
       />
       <label htmlFor={id}>{placeHolder}</label>
     </div>

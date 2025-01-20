@@ -9,22 +9,30 @@ import {
   Selector,
   InputDefault,
 } from "./../components/Inputs";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [patherName, setPatherName] = useState("");
   const [matherName, setMatherName] = useState("");
   const [email, setEmail] = useState("");
-  const [cellphone, setCellpone] = useState("");
+  const [cellphone, setCellphone] = useState("");
   const [password, setPassword] = useState("");
+
+  const Home = () => {
+    navigate("/Home");
+  };
 
   return (
     <>
       <NavBar />
 
       <main className={Styles.background}>
+        <div className={Styles.opacity}></div>
         <form className={Styles.form}>
-          <h1>Registar usuario</h1>
+          <h1 className={Styles.title}>Registar usuario</h1>
           <div className={Styles.formData}>
             <InputUser
               type="text"
@@ -67,17 +75,27 @@ function Register() {
               value={email}
               change={(e) => setEmail(e.target.value)}
               icon={
-                <span className="material-symbols-outlined">alternate_email</span>
+                <span className="material-symbols-outlined">
+                  alternate_email
+                </span>
               }
             />
 
             <InputCell
               type="tel"
-              id="userInput"
-              placeHolder="Usuario"
+              id="cellphone"
+              placeHolder="cellphone"
               req={true}
               value={cellphone}
               change={(e) => setCellphone(e.target.value)}
+            />
+
+            <InputPassword
+              name="password"
+              id="passwordInput"
+              placeHolder="Contrseña"
+              value={password}
+              change={(e) => setPassword(e.target.value)}
             />
 
             <Selector
@@ -89,22 +107,19 @@ function Register() {
                   <option value="1">Administración</option>
                   <option value="2">Torre</option>
                   <option value="3">Departamento</option>
-                  <option value="3">Dueño</option>
-                  <option value="3">Administrador</option>
-                  <option value="3">Inquilino</option>
+                  <option value="4">Dueño</option>
+                  <option value="5">Administrador</option>
+                  <option value="6">Inquilino</option>
                 </>
               }
             />
-
-            <InputPassword
-              name="password"
-              id="passwordInput"
-              placeHolder="Contrseña"
-              value={password}
-              change={(e) => setPassword(e.target.value)}
-            />
           </div>
-          <button>CARACOLES</button>
+          <div className={Styles.actions}>
+            <button className={Styles.cancel} onClick={Home}>
+              Cancelar
+            </button>
+            <button className={Styles.save}>Registrar</button>
+          </div>
         </form>
       </main>
     </>

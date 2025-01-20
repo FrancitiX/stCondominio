@@ -43,12 +43,12 @@ function Home() {
             </div>
             <div>
               <p>Ubicaión</p>
-              <p>No sé ayuda me sineto mal</p>
+              <p>No sé ayuda me siento mal</p>
             </div>
           </div>
         </div>
 
-        <section className={styles.container}>
+        <section className="container">
           <div className={`${styles.account} center`}>
             <h3>Datos de cuenta</h3>
             <div className={styles.data_account}>
@@ -70,7 +70,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className={classNames(styles.container, styles.anfitrion)}>
+        <section className={`${styles.anfitrion} container`}>
           <h3>Contacte con su anfitrión</h3>
           <div className={classNames(styles.data_anfitrion)}>
             <p>Anfitrión: <span>Anfitrion</span></p>
