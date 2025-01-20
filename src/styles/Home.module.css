@@ -50,6 +50,19 @@
   margin: 0 40px;
 }
 
+.monthTitle h3 {
+  margin-bottom: 0;
+}
+
+.monthTitle p {
+  margin-top: 0;
+}
+
+.monthPay {
+  margin-top: 2px;
+  color: var(--specialText);
+}
+
 .monthDescription {
   padding: 10px;
   background: var(--bgColor3);
@@ -115,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 950px) {
   .welcome h1 {
     padding: 0px 30px;
   }

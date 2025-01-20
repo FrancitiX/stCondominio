@@ -21,9 +21,7 @@ const InputDefault = ({ type, name, id, placeHolder, req }) => {
   );
 };
 
-const InputMedio = ({ type, name, id, placeHolder, req }) => {
-  const [value, setValue] = useState("");
-
+const InputMedio = ({ type, name, id, placeHolder, req, value, change }) => {
   return (
     <div className={style.inputContain_medio}>
       <input
@@ -33,16 +31,23 @@ const InputMedio = ({ type, name, id, placeHolder, req }) => {
         id={id}
         required={req ? true : undefined}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={change}
       />
       <label htmlFor={id}>{placeHolder}</label>
     </div>
   );
 };
 
-const InputUser = ({ type, name, id, placeHolder, req }) => {
-  const [value, setValue] = useState("");
-
+const InputUser = ({
+  type,
+  name,
+  id,
+  placeHolder,
+  req,
+  change,
+  value,
+  icon,
+}) => {
   return (
     <div className={style.inputContain}>
       <input
@@ -52,11 +57,9 @@ const InputUser = ({ type, name, id, placeHolder, req }) => {
         id={id}
         required={req ? true : undefined}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={change}
       />
-      <div className={style.iconVisible}>
-        <span className="material-symbols-outlined">person</span>
-      </div>
+      <div className={style.iconVisible}>{icon}</div>
       <label htmlFor={id}>{placeHolder}</label>
     </div>
   );
@@ -80,7 +83,10 @@ const InputPassword = ({ name, id, placeHolder, change, value }) => {
         value={value}
         onChange={change}
       />
-      <div className={classNames(style.iconVisible, style.passwordIcon)} onClick={passwordVisible}>
+      <div
+        className={classNames(style.iconVisible, style.passwordIcon)}
+        onClick={passwordVisible}
+      >
         {visible ? (
           <span className="material-symbols-outlined">visibility</span> // Mostrar ícono de visibilidad
         ) : (
@@ -104,7 +110,6 @@ const Selector = ({ name, id, title, options }) => {
 };
 
 const InputCell = ({ type, name, id, value, req, change }) => {
-
   return (
     <div className={style.inputContain}>
       <input

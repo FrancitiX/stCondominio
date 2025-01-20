@@ -23,12 +23,12 @@ function Home() {
 
         <div className={classNames(styles.monthCard)}>
           <div className={classNames(styles.monthPrice)}>
-            <div>
+            <div className={styles.monthTitle}>
               <h3>Pago mensual</h3>
               <p>sig. pago 01/02/25</p>
             </div>
             <div>
-              <h1>$35,000.00</h1>
+              <h1 className={styles.monthPay}>$35,000.00</h1>
             </div>
           </div>
           <div className={classNames(styles.monthDescription)}>
