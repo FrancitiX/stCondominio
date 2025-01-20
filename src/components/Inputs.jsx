@@ -62,8 +62,7 @@ const InputUser = ({ type, name, id, placeHolder, req }) => {
   );
 };
 
-const InputPassword = ({ name, id, placeHolder }) => {
-  const [value, setValue] = useState("");
+const InputPassword = ({ name, id, placeHolder, change, value }) => {
   const [visible, setVisible] = useState(false);
 
   const passwordVisible = () => {
@@ -79,7 +78,7 @@ const InputPassword = ({ name, id, placeHolder }) => {
         id={id}
         required
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={change}
       />
       <div className={classNames(style.iconVisible, style.passwordIcon)} onClick={passwordVisible}>
         {visible ? (
@@ -104,8 +103,7 @@ const Selector = ({ name, id, title, options }) => {
   );
 };
 
-const InputCell = ({ type, name, id, placeHolder, req }) => {
-  const [value, setValue] = useState("");
+const InputCell = ({ type, name, id, value, req, change }) => {
 
   return (
     <div className={style.inputContain}>
@@ -116,7 +114,7 @@ const InputCell = ({ type, name, id, placeHolder, req }) => {
         id={id}
         required={req ? true : undefined}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={change}
       />
       <div className={style.iconVisible}>
         <span className="material-symbols-outlined">call</span>

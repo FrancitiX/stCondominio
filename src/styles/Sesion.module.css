@@ -55,9 +55,10 @@
 
 .helpText {
     width: 80%;
-    font-size: 14px;
+    font-size: 13.5px;
+    font-weight: 450;
     text-align: center;
-    color: rgb(235, 238, 240);
+    color: rgb(215, 218, 220);
     filter: drop-shadow(0 0 15px var(--shadow2));
     margin-top: 0;
     margin-bottom: 30px;

@@ -1,14 +1,23 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./../styles/Sesion.module.css";
+import React, { useState } from "react";
 import { InputCell, InputPassword } from "./../components/Inputs";
+import { Log_in } from "../utils/user";
+import styles from "./../styles/Sesion.module.css";
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
+  const [ cellphone, setCellphone ] = useState("")
+  const [ password, setPassword ] = useState("")
 
-  const Home = () => {
-    navigate("/Home");
+  const Login = async () => {
+    const result = await Log_in(cellphone, password);
+    if (result) {
+      navigate("/Home");
+    } 
+    // else {
+    //   navigate("/home");
+    // }
   };
 
   return (
@@ -30,6 +39,8 @@ function Login() {
                   id="userInput"
                   placeHolder="Usuario"
                   req={true}
+                  value={cellphone}
+                  change={(e) => setCellphone(e.target.value)}
                 />
               </div>
 
@@ -37,13 +48,15 @@ function Login() {
                 name="password"
                 id="passwordInput"
                 placeHolder="Contrseña"
+                value={password}
+                change={(e) => setPassword(e.target.value)}
               />
 
               <div>
                 <button
                   className={classNames(styles.button)}
                   type="button"
-                  onClick={Home}
+                  onClick={Login}
                 >
                   Iniciar sesión
                 </button>
