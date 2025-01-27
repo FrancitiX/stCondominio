@@ -38,16 +38,17 @@
 }
 
 .title {
-    color: rgb(91, 120, 200);
     font-size: 30px;
     margin: 0px 0px 50px;
+    color: rgb(180, 200, 255);
+    text-shadow: 0 0 5px var(--shadow);
     filter: drop-shadow(0 0 15px var(--shadow2));
 }
 
 .formData {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 20px;
 }
 
