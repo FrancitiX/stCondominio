@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/Nav-bar";
+import Footer from "../components/Footer";
 
 function Status() {
   return (
-    <div>Status</div>
-  )
+    <>
+      <NavBar />
+      
+      <main>
+        <h3>Estado de la cuenta</h3>
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
-export default Status
+export default Status;

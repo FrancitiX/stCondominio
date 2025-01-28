@@ -2,16 +2,14 @@ import React from "react";
 import NavBar from "../components/Nav-bar";
 import Footer from "../components/Footer";
 
-function Gates() {
+function Penaltys() {
   return (
     <>
       <NavBar />
-      <main>
-        <h2>gates</h2>
-      </main>
+      <main></main>
       <Footer />
     </>
   );
 }
 
-export default Gates;
+export default Penaltys;

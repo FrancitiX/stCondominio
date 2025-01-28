@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/Nav-bar";
+import Footer from "../components/Footer";
 
 function PayAdmin() {
   return (
-    <div>PayAdmin</div>
-  )
+    <>
+      <NavBar />
+      <main>
+        <h4>pay admin</h4>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
-export default PayAdmin
+export default PayAdmin;

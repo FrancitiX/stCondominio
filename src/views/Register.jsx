@@ -93,7 +93,7 @@ function Register() {
             <InputPassword
               name="password"
               id="passwordInput"
-              placeHolder="Contrseña"
+              placeHolder="Contraseña"
               value={password}
               change={(e) => setPassword(e.target.value)}
             />

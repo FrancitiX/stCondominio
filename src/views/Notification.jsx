@@ -1,15 +1,13 @@
 import React from "react";
 import NavBar from "../components/Nav-bar";
 
-function Users() {
+function Notifications() {
   return (
     <>
       <NavBar />
-      <main>
-        <h3>Usuarios</h3>
-      </main>
+      <main></main>
     </>
   );
 }
 
-export default Users;
+export default Notifications;

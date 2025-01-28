@@ -15,8 +15,8 @@ function Home() {
         <section className={classNames(styles.welcome)}>
           <div className={classNames(styles.welcomeText)}>
             <h1>
-              !Bienvenido de nuevo <br />
-              <span>Usuario</span>¡
+              ¡Bienvenido de nuevo <br />
+              <span>Usuario</span>!
             </h1>
           </div>
         </section>
@@ -42,7 +42,7 @@ function Home() {
               </p>
             </div>
             <div>
-              <p>Ubicaión</p>
+              <p>Ubicación</p>
               <p>No sé ayuda me siento mal</p>
             </div>
           </div>
