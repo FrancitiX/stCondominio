@@ -3,6 +3,7 @@ header {
   height: auto;
   background: rgb(105, 105, 105);
   box-shadow: 0 0 20px var(--shadow);
+  border-bottom: 1px solid var(--text);
   z-index: 50;
 }
 
@@ -160,7 +161,7 @@ header a:hover:not(.title):not(.notify_url) {
 
 .notify_container:hover {
   transform: scale(0.98);
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--detail4);
   box-shadow: 0 0 5px var(--shadow);
   z-index: 83;
 }
@@ -197,6 +198,7 @@ header a:hover:not(.title):not(.notify_url) {
 .notify_button {
   width: 50%;
   padding: 5px 0;
+  color: var(--text);
   background: var(--bgColor);
   border: none;
   cursor: pointer;
@@ -250,6 +252,18 @@ header a:hover:not(.title):not(.notify_url) {
   transform: scale(1.02);
 }
 
+.no_notify {
+  height: 140px;
+  margin-top: 5px;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  border: 1px solid var(--shadow);
+  border-radius: 5px;
+}
+
 .nav_userImage {
   height: 40px;
   width: 40px;
@@ -273,4 +287,9 @@ header a:hover:not(.title):not(.notify_url) {
 
 .hidden {
   display: none;
+}
+
+.active_option {
+  color: var(--specialText);
+  transform: scale(1.03);
 }

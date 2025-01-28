@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/Nav-bar";
 
 function Notifications() {
   return (
-    <div>Notifications</div>
-  )
+    <>
+      <NavBar />
+      <main></main>
+    </>
+  );
 }
 
-export default Notifications
+export default Notifications;

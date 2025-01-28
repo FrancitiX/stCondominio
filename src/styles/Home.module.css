@@ -2,6 +2,8 @@
   position: relative;
   min-height: 80vh;
   margin-top: 20px;
+  color: var(--text);
+  background: var(--bgColor);
 }
 
 .welcome {

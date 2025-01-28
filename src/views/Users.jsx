@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/Nav-bar";
 
 function Users() {
   return (
-    <div>Users</div>
-  )
+    <>
+      <NavBar />
+      <main>
+        <h3>Usuarios</h3>
+      </main>
+    </>
+  );
 }
 
-export default Users
+export default Users;

@@ -1,66 +1,56 @@
 import React from "react";
+import styles from "./../styles/components/Footer.module.css";
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
         {/* Información del condominio */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Condominio Las Palmas</h3>
-          <p className="text-sm">
+        <div className={styles.section}>
+          <h3 className={styles.title}>Condominio Las Palmas</h3>
+          <p className={styles.text}>
             Dirección: Av. Principal #123, Ciudad, Estado
           </p>
-          <p className="text-sm">Teléfono: (123) 456-7890</p>
-          <p className="text-sm">Correo: contacto@laspalmas.com</p>
+          <p className={styles.text}>Teléfono: (123) 456-7890</p>
+          <p className={styles.text}>Correo: contacto@laspalmas.com</p>
         </div>
 
         {/* Enlaces útiles */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Enlaces útiles</h3>
-          <ul className="space-y-2 text-sm">
+        <div className={styles.section}>
+          <h3 className={styles.title}>Enlaces útiles</h3>
+          <ul className={styles.linksList}>
             <li>
-              <a
-                href="/reglamento"
-                className="hover:text-gray-400 transition-colors"
-              >
+              <a href="/reglamento" className={styles.link}>
                 Reglamento del condominio
               </a>
             </li>
             <li>
-              <a
-                href="/reservas"
-                className="hover:text-gray-400 transition-colors"
-              >
+              <a href="/reservas" className={styles.link}>
                 Reservas de áreas comunes
               </a>
             </li>
             <li>
-              <a
-                href="/noticias"
-                className="hover:text-gray-400 transition-colors"
-              >
+              <a href="/noticias" className={styles.link}>
                 Noticias y eventos
               </a>
             </li>
             <li>
-              <a
-                href="/contacto"
-                className="hover:text-gray-400 transition-colors"
-              >
+              <a href="/contacto" className={styles.link}>
                 Contacto
               </a>
             </li>
           </ul>
         </div>
 
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Síguenos</h3>
-          <div className="flex space-x-4">
+        {/* Redes sociales */}
+        <div className={styles.section}>
+          <h3 className={styles.title}>Síguenos</h3>
+          <div className={styles.socialIcons}>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors"
+              className={styles.icon}
             >
               <span className="material-symbols-outlined">facebook</span>
             </a>
@@ -68,7 +58,7 @@ function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors"
+              className={styles.icon}
             >
               <span className="material-symbols-outlined">twitter</span>
             </a>
@@ -76,7 +66,7 @@ function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors"
+              className={styles.icon}
             >
               <span className="material-symbols-outlined">instagram</span>
             </a>
@@ -84,7 +74,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm">
+      <div className={styles.footerBottom}>
         &copy; {new Date().getFullYear()} Condominio Las Palmas. Todos los
         derechos reservados.
       </div>

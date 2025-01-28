@@ -1,4 +1,4 @@
-function Log_in(number, password) {
+function log_in(number, password) {
   const formData = {
     number,
     password,
@@ -13,4 +13,25 @@ function Log_in(number, password) {
   }
 }
 
-export { Log_in };
+function register(userData) {
+  const fromData = userData;
+
+}
+
+function getUser(username) {
+
+}
+
+function getUsers(username) {
+
+}
+
+function updateUser(username) {
+
+}
+
+function deleteUser(username) {
+
+}
+
+export { log_in, register, getUser, getUsers, updateUser, deleteUser };
