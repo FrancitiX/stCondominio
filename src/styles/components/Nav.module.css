@@ -119,7 +119,7 @@ header a:hover:not(.title):not(.notify_url) {
   right: 0;
   padding: 5px;
   min-width: 300px;
-  /* display: none; */
+  display: none;
   background: var(--bgColor);
   box-shadow: 0 4px 10px var(--shadow);
   border-radius: 5px;
@@ -207,12 +207,19 @@ header a:hover:not(.title):not(.notify_url) {
   background: var(--bgColor2);
 }
 
+.notify_button.active {
+  color: var(--specialText);
+}
+
 .underline {
   width: 49%;
   border: 3px solid var(--bgColor3);
   border-radius: 5px;
-  /* transform: translateX(100%); */
   transition: 0.3s;
+}
+
+.underline.active {
+  transform: translateX(97%);
 }
 
 .notifications_mask {

@@ -96,7 +96,7 @@ function NavBar() {
                       Leídas
                     </button>
                   </div>
-                  <div className={styles.underline}></div>
+                  <div className={classNames(styles.underline, notifyStatus && styles.active)}></div>
                 </div>
 
                 <div className={styles.notifications_container}>
