@@ -9,6 +9,40 @@ import classNames from "classnames";
 function NavBar() {
   const user = localStorage.getItem("typeUser");
   const [theme, setTheme] = useState("light");
+  const [notifyStatus, setNotifyStatus] = useState(false);
+
+  const notifications = [
+    {
+      id: "M1",
+      type: "multa",
+      title: "Usted a sido multado",
+      short: "Multa por tiempo limite de pago",
+      recipients: [
+        {
+          user: "Usuario",
+          read: false,
+        },
+      ],
+      date: { date: "27/012025", time: "08:00 p.m." },
+    },
+    {
+      id: "M2",
+      type: "recordatorio",
+      title: "Recordatorio de pago",
+      short: "Su pago vence pronto",
+      recipients: [
+        {
+          user: "Usuario",
+          read: true,
+        },
+      ],
+      date: { date: "25/01/2025", time: "10:00 a.m." },
+    },
+  ];
+
+  const filteredNotifications = notifications.filter(
+    (notify) => notify.recipients[0].read === notifyStatus
+  );
 
   return (
     <header>
@@ -29,13 +63,90 @@ function NavBar() {
               {theme === "light" ? "light_mode" : "dark_mode"}
             </span>
 
-            <Link to="/notifications" className={styles.nav_notification}>
+            <div className={styles.nav_notification}>
               <img
                 src={Notification}
                 alt="Notificaciones"
-                className={styles.image}
+                className={styles.nav_img}
               />
-            </Link>
+              {notifications.length > 0 && (
+                <span className={styles.notification_count}>
+                  {notifications.length}
+                </span>
+              )}
+              <div className={styles.notifications}>
+                <div className={styles.notify_status}>
+                  <div className={styles.notify_read}>
+                    <button
+                      onClick={() => setNotifyStatus(false)}
+                      className={classNames(
+                        styles.notify_button,
+                        !notifyStatus && styles.active
+                      )}
+                    >
+                      No leídas
+                    </button>
+                    <button
+                      onClick={() => setNotifyStatus(true)}
+                      className={classNames(
+                        styles.notify_button,
+                        notifyStatus && styles.active
+                      )}
+                    >
+                      Leídas
+                    </button>
+                  </div>
+                  <div className={styles.underline}></div>
+                </div>
+
+                <div className={styles.notifications_container}>
+                  {filteredNotifications.length > 0 ? (
+                    filteredNotifications.map((notify) => (
+                      <div key={notify.id} className={styles.notify_container}>
+                        <input type="checkbox" />
+                        <Link
+                          to={`/notification/${notify.id}`}
+                          className={styles.notify_url}
+                        >
+                          <div className={styles.notify_read}>
+                            <div>
+                              <p>{notify.title}</p>
+                            </div>
+                            <span className={styles.notify_date}>
+                              {notify.date.date}
+                            </span>
+                          </div>
+                          <p className={styles.notify_description}>
+                            {notify.short}
+                          </p>
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <div>Sin notificaciones nuevas</div>
+                  )}
+                </div>
+
+                <div className={styles.notify_read}>
+                  <div className={styles.notifications_mask}>
+                    <input type="checkbox" />
+                    <button
+                      className={classNames(
+                        styles.notify_button,
+                        styles.notify_reader
+                      )}
+                    >
+                      Marcar como leidas
+                    </button>
+                  </div>
+                  <button
+                    className={classNames(styles.notify_button, styles.delete)}
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
             <Link to="/profile" className={styles.nav_userImage}>
               <img src={userImage} alt="usuario" className={styles.image} />
             </Link>
@@ -48,7 +159,7 @@ function NavBar() {
               <Link to="/register">Agregar usuario</Link>
               <Link to="/users">Usuarios</Link>
               <Link to="/pay-admin">Registro de pagos</Link>
-              <Link to="/fines">Registro de multas</Link>
+              <Link to="/penaltys">Registro de multas</Link>
               <Link to="/gates">Permisos de portones</Link>
               <Link to="/condominiums">Condominios</Link>
 
