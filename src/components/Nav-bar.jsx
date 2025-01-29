@@ -27,19 +27,19 @@ function NavBar() {
   };
 
   const notifications = [
-    // {
-    //   id: "M1",
-    //   type: "multa",
-    //   title: "Usted a sido multado",
-    //   short: "Multa por tiempo limite de pago",
-    //   recipients: [
-    //     {
-    //       user: "Usuario",
-    //       read: false,
-    //     },
-    //   ],
-    //   date: { date: "27/012025", time: "08:00 p.m." },
-    // },
+    {
+      id: "M1",
+      type: "multa",
+      title: "Usted a sido multado",
+      short: "Multa por tiempo limite de pago",
+      recipients: [
+        {
+          user: "Usuario",
+          read: false,
+        },
+      ],
+      date: { date: "27/012025", time: "08:00 p.m." },
+    },
     {
       id: "M2",
       type: "recordatorio",
@@ -70,7 +70,6 @@ function NavBar() {
           <Link
             to="/home"
             className={classNames(styles.nav_left, styles.title)}
-            onClick={() => setPage("")}
           >
             <img src={Logo} alt="Logo" />
             <h1>Condominios SIXFT</h1>
@@ -184,6 +183,12 @@ function NavBar() {
                   >
                     Eliminar
                   </button>
+                </div>
+
+                <div className={styles.notifications_all}>
+                  <Link className={classNames(styles.notify_all)}>
+                    Ver todas las notificaciones
+                  </Link>
                 </div>
               </div>
             </div>

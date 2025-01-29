@@ -5,7 +5,15 @@ function Notifications() {
   return (
     <>
       <NavBar />
-      <main></main>
+      <main>
+        <div>
+          <section>
+            <div>No leídas</div>
+            <div>Leídas</div>
+          </section>
+          <section></section>
+        </div>
+      </main>
     </>
   );
 }

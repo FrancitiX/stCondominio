@@ -7,7 +7,7 @@ const InputDefault = ({ type, name, id, placeHolder, req, value, change, readOnl
   return (
     <div className={style.inputContain}>
       <input
-        className={style.input}
+        className={style.inputSession}
         type={type}
         name={name}
         id={id}
@@ -98,11 +98,11 @@ const InputPassword = ({ name, id, placeHolder, change, value }) => {
   );
 };
 
-const Selector = ({ name, id, title, options }) => {
+const Selector = ({ name, id, title, options, change }) => {
   return (
     <div className={style.selectorContain}>
       <label htmlFor={id}>{title}</label>
-      <select className={style.Selector} name={name} id={id}>
+      <select className={style.Selector} name={name} id={id} onChange={change}>
         {options}
       </select>
     </div>
