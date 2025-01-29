@@ -5,8 +5,7 @@ import styles from "./../styles/Home.module.css";
 import classNames from "classnames";
 
 function Home() {
-  const user = localStorage.getItem("typeUser");
-  console.log(user);
+  const rol = localStorage.getItem("typeUser");
 
   return (
     <>

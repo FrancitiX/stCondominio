@@ -17,11 +17,10 @@ function Register() {
 
   const [formData, setFormData] = useState({
     name: { name: "", paternal_surname: "", maternal_surname: "" },
-    username: "",
     email: "",
     cellphone: "",
     pass: "",
-    rol: "",
+    rol: "6",
     department: [],
     tower: [],
   });
@@ -41,10 +40,12 @@ function Register() {
   };
 
   const Home = () => {
+    event.preventDefault();
     navigate("/home");
   };
 
   const registrar = () => {
+    event.preventDefault();
     register(formData);
   };
 
@@ -129,12 +130,12 @@ function Register() {
               change={change}
               options={
                 <>
+                  <option value="6">Inquilino</option>
                   <option value="1">Administración</option>
                   <option value="2">Torre</option>
                   <option value="3">Departamento</option>
                   <option value="4">Dueño</option>
                   <option value="5">Administrador</option>
-                  <option value="6">Inquilino</option>
                 </>
               }
             />
@@ -168,10 +169,12 @@ function Register() {
             />
           </div>
           <div className={Styles.actions}>
-            <button className={Styles.cancel} onClick={Home}>
+            <button type="button" className={Styles.cancel} onClick={Home}>
               Cancelar
             </button>
-            <button className={Styles.save}>Registrar</button>
+            <button type="button" className={Styles.save} onClick={registrar}>
+              Registrar
+            </button>
           </div>
         </form>
       </main>

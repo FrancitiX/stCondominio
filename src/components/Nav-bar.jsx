@@ -7,7 +7,7 @@ import Notification from "./../assets/notification.png";
 import classNames from "classnames";
 
 function NavBar() {
-  const user = localStorage.getItem("typeUser");
+  const rol = localStorage.getItem("typeUser");
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [notifyStatus, setNotifyStatus] = useState(false);
   const noNotify = !notifyStatus
@@ -199,7 +199,7 @@ function NavBar() {
         </div>
 
         <div className={styles.nav_admin}>
-          {user === "Admin" && (
+          {rol === "1" && (
             <>
               <Link
                 to="/register"

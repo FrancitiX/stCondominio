@@ -1,19 +1,22 @@
 import axios from "axios";
 
-function log_in(number, password) {
+const URI = "http://localhost:5102";
+
+async function log_in(number, password) {
   const formData = {
     number,
     password,
   };
 
-
-
-  if (formData.number === "3321901790" || formData.number === "3300000000") {
-    localStorage.setItem("typeUser", "Admin");
+  try {
+    const response = await axios.post(URI + "/login", formData);
+    localStorage.setItem("typeUser", response.data.rol);
+    localStorage.setItem("token", response.data.token);
     return true;
-  } else {
-    localStorage.setItem("typeUser", "User");
-    return true;
+  } catch (error) {
+    console.error(error);
+    alert("Error al iniciar sesión");
+    return false;
   }
 }
 
@@ -21,30 +24,22 @@ async function register(userData) {
   const formData = userData;
 
   try {
-    const response = await axios.post("http://localhost:5101/api/register", formData);
+    const response = await axios.post(URI + "/register", formData);
     console.log(response.data);
     alert("Usuario registrado con éxito");
+    window.location.reload();
   } catch (error) {
     console.error(error);
     alert("Error al registrar usuario");
   }
-
 }
 
-function getUser(username) {
+function getUser(username) {}
 
-}
+function getUsers(username) {}
 
-function getUsers(username) {
+function updateUser(username) {}
 
-}
-
-function updateUser(username) {
-
-}
-
-function deleteUser(username) {
-
-}
+function deleteUser(username) {}
 
 export { log_in, register, getUser, getUsers, updateUser, deleteUser };
