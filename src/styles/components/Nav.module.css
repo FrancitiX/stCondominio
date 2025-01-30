@@ -288,6 +288,7 @@ header a:hover:not(.title):not(.notify_url) {
 .nav_userImage {
   height: 40px;
   width: 40px;
+  min-width: 40px;
   overflow: hidden;
   border-radius: 50%;
   user-select: none;
@@ -313,4 +314,69 @@ header a:hover:not(.title):not(.notify_url) {
 .active_option {
   color: var(--specialText);
   transform: scale(1.03);
+}
+
+
+@media screen and (max-width: 1300px) {
+  .nav_public {
+    padding: 0 200px;
+  }
+
+  .nav_admin {
+    padding: 5px 200px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .nav_public {
+    padding: 0 100px;
+  }
+
+  .nav_admin {
+    padding: 5px 100px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contacto {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .nav_public {
+    padding: 0 30px;
+  }
+
+  .nav_admin {
+    padding: 5px 30px;
+  }
+
+  .contacto {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .contacto {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .estatus {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .pago {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .usuario {
+    display: none;
+  }
 }

@@ -11,9 +11,15 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const Login = async () => {
-    const result = log_in(cellphone, password);
-    if (result) {
-      navigate("/home");
+    try {
+      const result = await log_in(cellphone, password);
+      console.log(result);
+
+      if (result) {
+        navigate("/home");
+      }
+    } catch (error) {
+      console.error("Error en login:", error);
     }
   };
 

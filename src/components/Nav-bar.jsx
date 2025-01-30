@@ -77,19 +77,28 @@ function NavBar() {
           <div className={styles.nav_right}>
             <Link
               to="/payments"
-              className={page === "payments" ? styles.active_option : null}
+              className={classNames(
+                styles.pago,
+                page === "payments" ? styles.active_option : null
+              )}
             >
               Realizar pago
             </Link>
             <Link
               to="/status"
-              className={page === "status" ? styles.active_option : null}
+              className={classNames(
+                styles.estatus,
+                page === "status" ? styles.active_option : null
+              )}
             >
               Estatus de cuenta
             </Link>
             <Link
               to="/contact"
-              className={page === "contact" ? styles.active_option : null}
+              className={classNames(
+                styles.contacto,
+                page === "contact" ? styles.active_option : null
+              )}
             >
               Contacto
             </Link>
@@ -97,7 +106,7 @@ function NavBar() {
               {theme === "light" ? "light_mode" : "dark_mode"}
             </span>
 
-            <div className={styles.nav_notification}>
+            <div className={classNames(styles.usuario, styles.nav_notification)}>
               <img
                 src={Notification}
                 alt="Notificaciones"
@@ -192,7 +201,7 @@ function NavBar() {
                 </div>
               </div>
             </div>
-            <Link to="/profile" className={styles.nav_userImage}>
+            <Link to="/profile" className={classNames(styles.usuario, styles.nav_userImage) }>
               <img src={userImage} alt="usuario" className={styles.image} />
             </Link>
           </div>
