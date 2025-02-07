@@ -243,7 +243,7 @@ function NavBar() {
               <Link
                 to="/condominiums"
                 className={
-                  page === "condominiums" ? styles.active_option : null
+                  page === "condominiums" ? styles.active_option : null 
                 }
               >
                 Condominios

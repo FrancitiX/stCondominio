@@ -24,10 +24,10 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/payments" element={<Payments />} />
-        <Route path="/status" element={<Status />} />
+        <Route path="/status/:user" element={<Status />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/notification/:type" element={<Notification />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:user" element={<Profile />} />
         <Route path="/users" element={<Users />} />
         <Route path="/pay-admin" element={<PayAdmin />} />
         <Route path="/penaltys" element={<Penaltys />} />

@@ -46,6 +46,7 @@ function Register() {
 
   const registrar = () => {
     event.preventDefault();
+    console.log(formData);
     register(formData);
   };
 

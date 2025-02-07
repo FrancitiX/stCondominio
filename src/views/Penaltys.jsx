@@ -33,7 +33,7 @@ function Penaltys() {
   return (
     <>
       <NavBar />
-      <main>
+      <main className={styles.main}>
         <section className="container">
           <div>
             <h3>Registrar una multa</h3>
