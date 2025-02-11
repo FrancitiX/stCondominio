@@ -3,11 +3,11 @@ import NavBar from "../components/Nav-bar";
 import Footer from "../components/Footer";
 import { InputDefault, InputUser, Selector } from "../components/Inputs";
 import styles from "./../styles/Penaltys.module.css";
+import { createPenalty } from "../utils/penaltys";
 
 function Penaltys() {
   const [formData, setFormData] = useState({
     title: "",
-    description: "",
     motivo: "",
     penalty: "1",
     department: [],
@@ -30,6 +30,11 @@ function Penaltys() {
     }
   };
 
+  const addPenalty = () => {
+    event.preventDefault();
+    createPenalty(formData);
+  }
+
   return (
     <>
       <NavBar />
@@ -45,15 +50,6 @@ function Penaltys() {
                   placeHolder="titulo de Multa"
                   req={true}
                   value={formData.title}
-                  change={change}
-                />
-
-                <InputDefault
-                  type="text"
-                  name="description"
-                  placeHolder="Description"
-                  req={true}
-                  value={formData.description}
                   change={change}
                 />
 
@@ -121,6 +117,20 @@ function Penaltys() {
                   }
                 />
 
+                <InputDefault
+                  type="text"
+                  name="users"
+                  placeHolder="Usuario(s)"
+                  req={true}
+                  value={formData.user}
+                  change={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      user: e.target.value.split(","),
+                    }))
+                  }
+                />
+
                 <div className={styles.dobleInput}>
                   <InputDefault
                     type="text"
@@ -133,7 +143,7 @@ function Penaltys() {
                 </div>
               </div>
 
-              <button type="button">Realizar multa</button>
+              <button type="button" onClick={addPenalty}>Realizar multa</button>
             </form>
           </div>
         </section>
