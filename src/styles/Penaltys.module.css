@@ -1,10 +1,49 @@
-
 .main {
     color: var(--text);
 }
 
+.formSection {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('./../assets/fondo_02.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formContainer {
+    width: 100%;
+
+    padding: 20px 0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px var(--shadow);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 .formData {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 20px;
+}
+
+.form {
+
+    width: 90%;
+}
+
+.dobleInput {
+    grid-column: span 2;
 }

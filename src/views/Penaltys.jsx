@@ -6,14 +6,14 @@ import styles from "./../styles/Penaltys.module.css";
 
 function Penaltys() {
   const [formData, setFormData] = useState({
-    id: "",
     title: "",
     description: "",
-    cellphone: "",
-    pass: "",
+    motivo: "",
     penalty: "1",
     department: [],
     tower: [],
+    user: [],
+    description: "",
   });
 
   const change = (e) => {
@@ -34,8 +34,8 @@ function Penaltys() {
     <>
       <NavBar />
       <main className={styles.main}>
-        <section className="container">
-          <div>
+        <section className={`${styles.formSection} container`}>
+          <div className={styles.formContainer}>
             <h3>Registrar una multa</h3>
             <form className={styles.form}>
               <div className={styles.formData}>
@@ -44,7 +44,7 @@ function Penaltys() {
                   name="title"
                   placeHolder="titulo de Multa"
                   req={true}
-                  value={formData.department}
+                  value={formData.title}
                   change={change}
                 />
 
@@ -54,6 +54,15 @@ function Penaltys() {
                   placeHolder="Description"
                   req={true}
                   value={formData.description}
+                  change={change}
+                />
+
+                <InputDefault
+                  type="text"
+                  name="motivo"
+                  placeHolder="Motivo"
+                  req={true}
+                  value={formData.motivo}
                   change={change}
                 />
 
@@ -83,6 +92,45 @@ function Penaltys() {
                     </>
                   }
                 />
+
+                <InputDefault
+                  type="text"
+                  name="tower"
+                  placeHolder="Torre"
+                  req={true}
+                  value={formData.tower}
+                  change={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      tower: e.target.value.split(","),
+                    }))
+                  }
+                />
+
+                <InputDefault
+                  type="text"
+                  name="department"
+                  placeHolder="Departamento"
+                  req={true}
+                  value={formData.department}
+                  change={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      department: e.target.value.split(","),
+                    }))
+                  }
+                />
+
+                <div className={styles.dobleInput}>
+                  <InputDefault
+                    type="text"
+                    name="description"
+                    placeHolder="Description"
+                    req={true}
+                    value={formData.description}
+                    change={change}
+                  />
+                </div>
               </div>
 
               <button type="button">Realizar multa</button>
