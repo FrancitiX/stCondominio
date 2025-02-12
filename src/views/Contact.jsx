@@ -1,15 +1,17 @@
 import React from "react";
 import NavBar from "../components/Nav-bar";
+import Footer from "../components/Footer";
 
-function Users() {
+function Contact() {
   return (
     <>
       <NavBar />
       <main>
-        <h3>Usuarios</h3>
+        <h4>Contactos:</h4>
       </main>
+      <Footer />
     </>
   );
 }
 
-export default Users;
+export default Contact;

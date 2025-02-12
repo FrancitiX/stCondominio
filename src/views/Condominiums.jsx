@@ -1,15 +1,17 @@
 import React from "react";
 import NavBar from "../components/Nav-bar";
+import Footer from "../components/Footer";
 
-function Users() {
+function Condominiums() {
   return (
     <>
       <NavBar />
       <main>
-        <h3>Usuarios</h3>
+        <h2>Condominios</h2>
       </main>
+      <Footer />
     </>
   );
 }
 
-export default Users;
+export default Condominiums;

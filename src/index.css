@@ -16,6 +16,7 @@
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  background: var(--bgColor);
 }
 
 body {
@@ -38,7 +39,7 @@ body {
   --detail: rgba(40, 40, 40);
   --detail2: rgba(100, 100, 100);
   --detail3: rgb(120, 180, 230);
-  --detail4: rgb(200, 200, 200);
+  --detail4: rgba(0, 0, 0, 0.05);
 
   --shadow: rgba(0, 0, 0, 0.2);
   --shadow2: rgba(0, 0, 0, 0.3);
@@ -49,7 +50,7 @@ body {
 
 [data-theme="dark"] {
   --bgColor: rgb(20, 20, 20);
-  --bgColor2: rgb(25, 25, 25);
+  --bgColor2: rgb(30, 33, 35);
   --bgColor3: rgb(90, 130, 200);
 
   --text: rgb(245, 245, 245);
@@ -61,7 +62,7 @@ body {
   --detail: rgba(220, 220, 220);
   --detail2: rgba(200, 200, 200);
   --detail3: rgb(120, 180, 230);
-  --detail4: rgb(50, 50, 50);
+  --detail4: rgb(255, 255, 255, 0.0.5);
 
   --shadow: rgba(250, 250, 250, 0.2);
   --shadow2: rgba(0, 0, 0, 0.3);

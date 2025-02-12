@@ -27,6 +27,7 @@
 } */
 
 .inputContain_medio .input {
+    width: 100%;
     font-size: 15px;
     padding: 12px 10px;
     letter-spacing: 0.5px;

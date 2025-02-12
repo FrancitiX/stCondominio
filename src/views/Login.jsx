@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import { InputCell, InputPassword } from "./../components/Inputs";
-import { Log_in } from "../utils/user";
+import { log_in } from "../utils/user";
 import styles from "./../styles/Sesion.module.css";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const [ cellphone, setCellphone ] = useState("")
-  const [ password, setPassword ] = useState("")
+  const [cellphone, setCellphone] = useState("");
+  const [password, setPassword] = useState("");
 
   const Login = async () => {
-    const result = await Log_in(cellphone, password);
-    if (result) {
-      navigate("/Home");
-    } 
-    // else {
-    //   navigate("/home");
-    // }
+    try {
+      const result = await log_in(cellphone, password);
+      console.log(result);
+
+      if (result) {
+        navigate("/home");
+      }
+    } catch (error) {
+      console.error("Error en login:", error);
+    }
   };
 
   return (
@@ -29,7 +32,8 @@ function Login() {
             <form>
               <div className="center">
                 <p className={styles.helpText}>
-                En caso de tener algun problema, comuniquese con su adminsitrador.
+                  En caso de tener algun problema, comuniquese con su
+                  adminsitrador.
                 </p>
               </div>
 

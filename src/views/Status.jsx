@@ -1,15 +1,19 @@
 import React from "react";
 import NavBar from "../components/Nav-bar";
+import Footer from "../components/Footer";
 
-function Users() {
+function Status() {
   return (
     <>
       <NavBar />
+      
       <main>
-        <h3>Usuarios</h3>
+        <h3>Estado de la cuenta</h3>
       </main>
+
+      <Footer />
     </>
   );
 }
 
-export default Users;
+export default Status;

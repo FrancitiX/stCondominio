@@ -10,19 +10,44 @@ import {
   InputDefault,
 } from "./../components/Inputs";
 import { useNavigate } from "react-router-dom";
+import { register } from "../utils/user";
 
 function Register() {
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [patherName, setPatherName] = useState("");
-  const [matherName, setMatherName] = useState("");
-  const [email, setEmail] = useState("");
-  const [cellphone, setCellphone] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    name: { name: "", paternal_surname: "", maternal_surname: "" },
+    email: "",
+    cellphone: "",
+    pass: "",
+    rol: "6",
+    department: [],
+    tower: [],
+  });
+
+  const change = (e) => {
+    const { name, value } = e.target;
+
+    if (name.includes(".")) {
+      const [parent, child] = name.split(".");
+      setFormData((prev) => ({
+        ...prev,
+        [parent]: { ...prev[parent], [child]: value },
+      }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
 
   const Home = () => {
-    navigate("/Home");
+    event.preventDefault();
+    navigate("/home");
+  };
+
+  const registrar = () => {
+    event.preventDefault();
+    console.log(formData);
+    register(formData);
   };
 
   return (
@@ -36,33 +61,33 @@ function Register() {
           <div className={Styles.formData}>
             <InputUser
               type="text"
-              name="name"
+              name="name.name"
               id="name"
               placeHolder="Nombre"
               req={true}
-              value={name}
-              change={(e) => setName(e.target.value)}
+              value={formData.name.name}
+              change={change}
               icon={<span className="material-symbols-outlined">person</span>}
             />
 
             <div className={Styles.dbInputs}>
               <InputMedio
                 type="text"
-                name="pathernName"
+                name="name.paternal_surname"
                 id="pathernName"
                 placeHolder="Apellido paterno"
                 req={true}
-                value={patherName}
-                change={(e) => setPatherName(e.target.value)}
+                value={formData.name.paternal_surname}
+                change={change}
               />
               <InputMedio
                 type="text"
-                name="mathernName"
+                name="name.maternal_surname"
                 id="mathernName"
                 placeHolder="Apellido materno"
                 req={true}
-                value={matherName}
-                change={(e) => setMatherName(e.target.value)}
+                value={formData.name.maternal_surname}
+                change={change}
               />
             </div>
 
@@ -72,8 +97,8 @@ function Register() {
               id="email"
               placeHolder="Correo eléctronico"
               req={true}
-              value={email}
-              change={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              change={change}
               icon={
                 <span className="material-symbols-outlined">
                   alternate_email
@@ -83,42 +108,74 @@ function Register() {
 
             <InputCell
               type="tel"
+              name="cellphone"
               id="cellphone"
               placeHolder="cellphone"
               req={true}
-              value={cellphone}
-              change={(e) => setCellphone(e.target.value)}
+              value={formData.cellphone}
+              change={change}
             />
 
             <InputPassword
-              name="password"
+              name="pass"
               id="passwordInput"
-              placeHolder="Contrseña"
-              value={password}
-              change={(e) => setPassword(e.target.value)}
+              placeHolder="Contraseña"
+              value={formData.pass}
+              change={change}
             />
 
             <Selector
-              name="Rol"
-              id="Rol"
+              name="rol"
+              id="rol"
               title="Rol"
+              change={change}
               options={
                 <>
+                  <option value="6">Inquilino</option>
                   <option value="1">Administración</option>
                   <option value="2">Torre</option>
                   <option value="3">Departamento</option>
                   <option value="4">Dueño</option>
                   <option value="5">Administrador</option>
-                  <option value="6">Inquilino</option>
                 </>
+              }
+            />
+
+            <InputDefault
+              type="text"
+              name="tower"
+              placeHolder="Torre"
+              req={true}
+              value={formData.tower}
+              change={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  tower: e.target.value.split(","),
+                }))
+              }
+            />
+
+            <InputDefault
+              type="text"
+              name="department"
+              placeHolder="Departamento"
+              req={true}
+              value={formData.department}
+              change={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  department: e.target.value.split(","),
+                }))
               }
             />
           </div>
           <div className={Styles.actions}>
-            <button className={Styles.cancel} onClick={Home}>
+            <button type="button" className={Styles.cancel} onClick={Home}>
               Cancelar
             </button>
-            <button className={Styles.save}>Registrar</button>
+            <button type="button" className={Styles.save} onClick={registrar}>
+              Registrar
+            </button>
           </div>
         </form>
       </main>
