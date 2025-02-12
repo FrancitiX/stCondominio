@@ -5,6 +5,7 @@ import Logo from "/Logo.png";
 import userImage from "./../assets/Usuario.png";
 import Notification from "./../assets/notification.png";
 import classNames from "classnames";
+import { pushNotifications } from "../utils/notifications";
 
 function NavBar() {
   const rol = localStorage.getItem("typeUser");
@@ -21,6 +22,10 @@ function NavBar() {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    pushNotifications();
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
@@ -106,7 +111,9 @@ function NavBar() {
               {theme === "light" ? "light_mode" : "dark_mode"}
             </span>
 
-            <div className={classNames(styles.usuario, styles.nav_notification)}>
+            <div
+              className={classNames(styles.usuario, styles.nav_notification)}
+            >
               <img
                 src={Notification}
                 alt="Notificaciones"
@@ -201,7 +208,10 @@ function NavBar() {
                 </div>
               </div>
             </div>
-            <Link to="/profile" className={classNames(styles.usuario, styles.nav_userImage) }>
+            <Link
+              to="/profile"
+              className={classNames(styles.usuario, styles.nav_userImage)}
+            >
               <img src={userImage} alt="usuario" className={styles.image} />
             </Link>
           </div>
@@ -243,7 +253,7 @@ function NavBar() {
               <Link
                 to="/condominiums"
                 className={
-                  page === "condominiums" ? styles.active_option : null 
+                  page === "condominiums" ? styles.active_option : null
                 }
               >
                 Condominios

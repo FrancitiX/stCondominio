@@ -41,8 +41,8 @@ async function getUser(token) {
         Authorization: `Bearer ${token}`,
       },
     });  
-    localStorage.setItem("userData", JSON.stringify(response.data));
-    return response.data;
+    localStorage.setItem("userData", JSON.stringify(response.data.data));
+    return response.data.data;
   } catch (error) {
     console.error("Error al obtener datos del usuario:", error);
     alert("Error al obtener datos del usuario");

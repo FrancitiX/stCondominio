@@ -16,14 +16,12 @@ function Home() {
     if (token) {
       getUser(token).then((data) => {
         if (data) {
-          setUsername(data.data.name.name);
-          setUser(data.data);
+          setUsername(data.name.name);
+          setUser(data);
         }
       });
     }
   }, []);
-
-  // console.log(User.name.maternal_surname);
 
   return (
     <>
