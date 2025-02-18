@@ -8,9 +8,14 @@ import classNames from "classnames";
 import { pushNotifications } from "../utils/notifications";
 
 function NavBar() {
-  const rol = localStorage.getItem("typeUser");
+  const [rol, setRol] = useState(localStorage.getItem("typeUser"));
+  const [user, setUser] = useState(localStorage.getItem("userData"));
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [notifications, setNotifications] = useState([]);
   const [notifyStatus, setNotifyStatus] = useState(false);
+  const [selectedNotifications, setSelectedNotifications] = useState([]);
+  const [username, setUsername] = useState("");
   const noNotify = !notifyStatus
     ? "Sin notificaciones nuevas"
     : "Sin notificaciones leídas";
@@ -23,50 +28,58 @@ function NavBar() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const fetchNotifications = async () => {
+    try {
+      const data = await pushNotifications();
+      setNotifications(data);
+    } catch (error) {
+      console.error("Error al obtener notificaciones:", error);
+    }
+  };
+
   useEffect(() => {
-    pushNotifications();
-  }, []);
+    fetchNotifications();
+
+    const interval = setInterval(() => {
+      fetchNotifications();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [notifications]);
+
+  useEffect(() => {
+    setUsername(JSON.parse(user).username);
+  }, [user]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const notifications = [
-    {
-      id: "M1",
-      type: "multa",
-      title: "Usted a sido multado",
-      short: "Multa por tiempo limite de pago",
-      recipients: [
-        {
-          user: "Usuario",
-          read: false,
-        },
-      ],
-      date: { date: "27/012025", time: "08:00 p.m." },
-    },
-    {
-      id: "M2",
-      type: "recordatorio",
-      title: "Recordatorio de pago",
-      short: "Su pago vence pronto",
-      recipients: [
-        {
-          user: "Usuario",
-          read: true,
-        },
-      ],
-      date: { date: "25/01/2025", time: "10:00 a.m." },
-    },
-  ];
+  const filteredNotifications = Array.isArray(notifications)
+    ? notifications.filter(
+        (notify) => notify.recipients[0].read === notifyStatus
+      )
+    : [];
 
-  const filteredNotifications = notifications.filter(
-    (notify) => notify.recipients[0].read === notifyStatus
-  );
+  const newNotifications = Array.isArray(notifications)
+    ? notifications.filter((notify) => notify.recipients[0].read === false)
+    : [];
 
-  const newNotifications = notifications.filter(
-    (notify) => notify.recipients[0].read === false
-  );
+  const selectNotification = (id) => {
+    setSelectedNotifications((prev) =>
+      prev.includes(id)
+        ? prev.filter((notifId) => notifId !== id)
+        : [...prev, id]
+    );
+  };
+
+  const selectAll = (event) => {
+    if (event.target.checked) {
+      setSelectedNotifications(filteredNotifications.map((notif) => notif.id));
+    } else {
+      setSelectedNotifications([]);
+    }
+  };
 
   return (
     <header>
@@ -158,7 +171,12 @@ function NavBar() {
                   {filteredNotifications.length > 0 ? (
                     filteredNotifications.map((notify) => (
                       <div key={notify.id} className={styles.notify_container}>
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          value={notify.id}
+                          checked={selectedNotifications.includes(notify.id)}
+                          onChange={() => selectNotification(notify.id)}
+                        />
                         <Link
                           to={`/notification/${notify.id}`}
                           className={styles.notify_url}
@@ -184,12 +202,26 @@ function NavBar() {
 
                 <div className={styles.notify_read}>
                   <div className={styles.notifications_mask}>
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      onChange={selectAll}
+                      checked={
+                        selectedNotifications.length ===
+                          filteredNotifications.length &&
+                        filteredNotifications.length > 0
+                      }
+                    />
                     <button
                       className={classNames(
                         styles.notify_button,
                         styles.notify_reader
                       )}
+                      onClick={() =>
+                        console.log(
+                          "Marcar como leídas:",
+                          selectedNotifications
+                        )
+                      }
                     >
                       Marcar como leidas
                     </button>
@@ -209,7 +241,7 @@ function NavBar() {
               </div>
             </div>
             <Link
-              to="/profile"
+              to={`/profile/${username}`}
               className={classNames(styles.usuario, styles.nav_userImage)}
             >
               <img src={userImage} alt="usuario" className={styles.image} />

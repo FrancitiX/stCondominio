@@ -4,19 +4,19 @@ const URI = "http://localhost:5102";
 const token = localStorage.getItem("token");
 
 async function getNotifications(username, skip, limit) {
-  try {
-    const response = await axios.get(URI + "/userData", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    localStorage.setItem("userData", JSON.stringify(response.data));
-    return response.data;
-  } catch (error) {
-    console.error("Error al obtener datos del usuario:", error);
-    alert("Error al obtener datos del usuario");
-    return null;
-  }
+  // try {
+  //   const response = await axios.get(URI + "/userData", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   });
+  //   localStorage.setItem("userData", JSON.stringify(response.data));
+  //   return response.data;
+  // } catch (error) {
+  //   console.error("Error al obtener datos del usuario:", error);
+  //   alert("Error al obtener datos del usuario");
+  //   return null;
+  // }
 }
 
 async function pushNotifications() {
@@ -28,8 +28,8 @@ async function pushNotifications() {
     const response = await axios.post(URI + "/notifications", {
       user: username,
     });
-    console.log(response.data.data);
-    //   return response.data;
+    // console.log(response.data.data);
+    return Array.isArray(response.data.data) ? response.data.data : [];
   } catch (error) {
     console.error("Error al obtener notificaciones del usuario:", error);
     alert("Error al obtener datos del usuario");
