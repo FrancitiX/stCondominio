@@ -13,6 +13,7 @@ import PayAdmin from "./views/PayAdmin";
 import Penaltys from "./views/Penaltys";
 import Gates from "./views/Gates";
 import Condominiums from "./views/Condominiums";
+import RetrievePassword from "./views/RetrievePassword";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} titie="registro de usuarios" />
         <Route path="/home" element={<Home />} />
         <Route path="/users" element={<Users />} />
         <Route path="/payments" element={<Payments />} />
@@ -33,6 +34,7 @@ function App() {
         <Route path="/penaltys" element={<Penaltys />} />
         <Route path="/gates" element={<Gates />} />
         <Route path="/condominiums" element={<Condominiums />} />
+        <Route path="/forgot-password/:token" element={<RetrievePassword />} />
       </Routes>
     </Router>
   );

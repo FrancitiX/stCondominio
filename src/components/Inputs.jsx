@@ -2,8 +2,16 @@ import { useState } from "react";
 import style from "./../styles/components/Inputs.module.css";
 import classNames from "classnames";
 
-const InputDefault = ({ type, name, id, placeHolder, req, value, change, readOnly }) => {
-
+const InputDefault = ({
+  type,
+  name,
+  id,
+  placeHolder,
+  req,
+  value,
+  change,
+  readOnly,
+}) => {
   return (
     <div className={style.inputContain}>
       <input
@@ -129,6 +137,15 @@ const InputCell = ({ type, name, id, value, req, change }) => {
   );
 };
 
+const InputSession = ({ change }) => {
+  return (
+    <div className={style.inputRemember}>
+      <input type="checkbox" name="remeberm" id="remember" onChange={change} />
+      <label htmlFor="remember">Recordar sesión</label>
+    </div>
+  );
+};
+
 export {
   InputDefault,
   InputMedio,
@@ -136,4 +153,5 @@ export {
   InputPassword,
   Selector,
   InputCell,
+  InputSession,
 };

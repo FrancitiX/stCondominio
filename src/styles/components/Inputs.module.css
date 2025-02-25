@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 
 .inputContain {
-    position: relative;
-    display: flex;
-    margin-bottom: 25px;
-    box-shadow: 0 0 10px var(--shadow2);
+  position: relative;
+  display: flex;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px var(--shadow2);
 }
 
 .inputContain_medio {
-    position: relative;
-    display: flex;
-    width: 48%;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px var(--shadow);
+  position: relative;
+  display: flex;
+  width: 48%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px var(--shadow);
 }
 
 /* .inputContain .input {
@@ -27,165 +27,185 @@
 } */
 
 .inputContain_medio .input {
-    width: 100%;
-    font-size: 15px;
-    padding: 12px 10px;
-    letter-spacing: 0.5px;
-    color: rgb(255, 255, 255);
-    background: transparent;
-    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
-    border: 1px solid rgb(250, 250, 250);
-    /* border: 1px solid var(--detail2); */
-    border-radius: 5px;
+  width: 100%;
+  font-size: 15px;
+  padding: 12px 10px;
+  letter-spacing: 0.5px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  filter: drop-shadow(0 0 15px rgb(0, 0, 0));
+  border: 1px solid rgb(250, 250, 250);
+  /* border: 1px solid var(--detail2); */
+  border-radius: 5px;
 }
 
 .inputContain .inputSession {
-    font-size: 15px;
-    padding: 12px 10px;
-    width: 100%;
-    letter-spacing: 0.5px;
-    color: rgb(255, 255, 255);
-    background: transparent;
-    /* border: 1px solid var(--text); */
-    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
-    border: 1px solid rgb(250, 250, 250);
-    border-radius: 5px 0px 0px 5px;
+  font-size: 15px;
+  padding: 12px 10px;
+  width: 100%;
+  letter-spacing: 0.5px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  /* border: 1px solid var(--text); */
+  filter: drop-shadow(0 0 15px rgb(0, 0, 0));
+  border: 1px solid rgb(250, 250, 250);
+  border-radius: 5px 0px 0px 5px;
 }
 
 .inputContain input:focus {
-    outline: none;
-    /* border: 1px solid rgb(91, 120, 200); */
+  outline: none;
+  /* border: 1px solid rgb(91, 120, 200); */
 }
 
 .inputContain_medio input:focus {
-    outline: none;
-    /* border: 1px solid rgb(91, 120, 200); */
+  outline: none;
+  /* border: 1px solid rgb(91, 120, 200); */
 }
 
 .inputContain label {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    padding: 12px 0;
-    font-size: 15px;
-    color: rgb(204, 207, 210);
-    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
-    pointer-events: none;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 12px 0;
+  font-size: 15px;
+  color: rgb(204, 207, 210);
+  filter: drop-shadow(0 0 15px rgb(0, 0, 0));
+  pointer-events: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
 }
 
-.inputContain input:focus~label,
-.inputContain input:hover~label,
-.inputContain input:valid~label,
-.inputContain input:not([value=""])~label {
-    top: -18px;
-    left: 10px;
-    padding: 0px 8px;
-    font-size: 13px;
-    /* color: var(--text); */
-    color: rgb(250, 250, 250);
-    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+.inputContain input:focus ~ label,
+.inputContain input:hover ~ label,
+.inputContain input:valid ~ label,
+.inputContain input:not([value=""]) ~ label {
+  top: -18px;
+  left: 10px;
+  padding: 0px 8px;
+  font-size: 13px;
+  /* color: var(--text); */
+  color: rgb(250, 250, 250);
+  filter: drop-shadow(0 0 10px rgb(0, 0, 0));
 }
 
 .inputContain_medio label {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    padding: 12px 0;
-    font-size: 15px;
-    color: rgb(204, 207, 210);
-    filter: drop-shadow(0 0 15px rgb(0, 0, 0));
-    pointer-events: none;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 12px 0;
+  font-size: 15px;
+  color: rgb(204, 207, 210);
+  filter: drop-shadow(0 0 15px rgb(0, 0, 0));
+  pointer-events: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
 }
 
-.inputContain_medio input:focus~label,
-.inputContain_medio input:hover~label,
-.inputContain_medio input:valid~label,
-.inputContain_medio input:not([value=""])~label {
-    top: -18px;
-    left: 10px;
-    padding: 0px 8px;
-    font-size: 13px;
-    color: rgb(250, 250, 250);
-    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
-    /* color: var(--text); */
+.inputContain_medio input:focus ~ label,
+.inputContain_medio input:hover ~ label,
+.inputContain_medio input:valid ~ label,
+.inputContain_medio input:not([value=""]) ~ label {
+  top: -18px;
+  left: 10px;
+  padding: 0px 8px;
+  font-size: 13px;
+  color: rgb(250, 250, 250);
+  filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+  /* color: var(--text); */
 }
 
 .passwordInput {
-    position: relative;
+  position: relative;
 }
 
 .passwordIcon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .iconVisible {
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    /* border: 1px solid var(--text); */
-    border: 1px solid rgb(250, 250, 250);
-    border-radius: 0px 5px 5px 0px;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  /* border: 1px solid var(--text); */
+  border: 1px solid rgb(250, 250, 250);
+  border-radius: 0px 5px 5px 0px;
 }
 
 .iconVisible span {
-    padding: 9px 10px;
-    margin: 0;
-    /* color: var(--text); */
-    color: rgb(250, 250, 250);
-    user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  padding: 9px 10px;
+  margin: 0;
+  /* color: var(--text); */
+  color: rgb(250, 250, 250);
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .selectorContain {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .selectorContain label {
-    position: absolute;
-    top: -18px;
-    left: 10px;
-    padding: 0px 8px;
-    font-size: 13px;
-    color: rgb(250, 250, 250);
-    pointer-events: none;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    z-index: 10;
+  position: absolute;
+  top: -18px;
+  left: 10px;
+  padding: 0px 8px;
+  font-size: 13px;
+  color: rgb(250, 250, 250);
+  pointer-events: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
 }
 
 .Selector {
-    font-size: 15px;
-    width: 100%;
-    padding: 12px 10px;
-    letter-spacing: 0.5px;
-    color: rgb(255, 255, 255);
-    filter: drop-shadow(0 0 10px rgb(0, 0, 0));
-    background: transparent;
-    box-shadow: 0 0 10px var(--shadow2);
-    border: 1px solid rgb(250, 250, 250);
-    /* border: 1px solid var(--detail2); */
-    border-radius: 5px;
+  font-size: 15px;
+  width: 100%;
+  padding: 12px 10px;
+  letter-spacing: 0.5px;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+  background: transparent;
+  box-shadow: 0 0 10px var(--shadow2);
+  border: 1px solid rgb(250, 250, 250);
+  /* border: 1px solid var(--detail2); */
+  border-radius: 5px;
 }
 
 .Selector:focus {
-    outline: none;
-    /* border: 1px solid rgb(91, 120, 200); */
+  outline: none;
+  /* border: 1px solid rgb(91, 120, 200); */
 }
 
 .Selector option {
-    background: rgb(105, 105, 105);
-    box-shadow: 0 0 10px var(--shadow);
+  background: rgb(105, 105, 105);
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.inputRemember {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.inputRemember label {
+  font-size: 15px;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  color: rgb(250, 250, 250);
+}
+
+.inputRemember input {
+  cursor: pointer;
 }

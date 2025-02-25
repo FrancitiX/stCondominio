@@ -2,10 +2,11 @@ import axios from "axios";
 
 const URI = "http://localhost:5102";
 
-async function log_in(number, password) {
+async function log_in(number, password, remember) {
   const formData = {
     number,
     password,
+    remember
   };
 
   try {

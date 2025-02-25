@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputCell, InputPassword } from "./../components/Inputs";
+import { InputCell, InputPassword, InputSession } from "./../components/Inputs";
 import { log_in } from "../utils/user";
 import styles from "./../styles/Sesion.module.css";
 import classNames from "classnames";
@@ -9,11 +9,11 @@ function Login() {
   const navigate = useNavigate();
   const [cellphone, setCellphone] = useState("");
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
 
   const Login = async () => {
     try {
-      const result = await log_in(cellphone, password);
-      console.log(result);
+      const result = await log_in(cellphone, password, remember);
 
       if (result) {
         navigate("/home");
@@ -28,7 +28,7 @@ function Login() {
       <div className={styles.form_container}>
         <div className={styles.form_data}>
           <div className={styles.form_left}>
-            <h1 className={styles.title}>Inicar sesion</h1>
+            <h1 className={styles.title}>Iniciar sesión</h1>
             <form>
               <div className="center">
                 <p className={styles.helpText}>
@@ -56,6 +56,10 @@ function Login() {
                 change={(e) => setPassword(e.target.value)}
               />
 
+              <InputSession 
+                change={remember ? () => {setRemember(false)} : () => {setRemember(true)}}
+              />
+
               <div>
                 <button
                   className={classNames(styles.button)}
@@ -66,6 +70,10 @@ function Login() {
                 </button>
               </div>
             </form>
+
+            <button type="button" className={styles.forgotPassword}>
+              Recuperar Contraseña
+            </button>
           </div>
           <div className={styles.form_right}>
             <img className={styles.logo} src="Logo.png" alt="logo" />
