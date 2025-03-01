@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./../styles/components/Modals.module.css";
+import { InputDefault } from "./../components/Inputs";
+import classNames from "classnames";
 
-function MoodalDefault(title, description, status) {
+function MoodalDefault({ title, description, status }) {
   return (
     <div>
       <div>
@@ -14,7 +17,7 @@ function MoodalDefault(title, description, status) {
   );
 }
 
-function MoodalConfirm(title, description, status, confirm) {
+function MoodalConfirm({ title, description, status, confirm }) {
   return (
     <div>
       <div>
@@ -34,7 +37,7 @@ function MoodalConfirm(title, description, status, confirm) {
   );
 }
 
-function MoodalNotice(title, image, status) {
+function MoodalNotice({ title, image, status }) {
   return (
     <div>
       <div>
@@ -48,4 +51,52 @@ function MoodalNotice(title, image, status) {
   );
 }
 
-export { MoodalDefault, MoodalConfirm, MoodalNotice };
+function ModalChangePassword({ title, message, status, onClose }) {
+  const [cellphone, setCellphone] = useState("");
+
+  const hidden = status ? styles.modalContainer : styles.hidden;
+
+  return (
+    <div className={hidden}>
+      <div className={styles.modal}>
+        <span className={styles.close} onClick={onClose}>
+          x
+        </span>
+        <div className={styles.modal_data}>
+          <div>
+            <h3>{title}</h3>
+            <p className={styles.message}>{message}</p>
+
+            <div className={styles.input}>
+              <InputDefault
+                type="tel"
+                name="cellphone"
+                placeHolder="Número de telefono"
+                req={true}
+                value={cellphone}
+                change={(e) => setCellphone(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className={styles.twoButtons}>
+            <button
+              type="button"
+              className={classNames(styles.button, styles.cancel)}
+              onClick={onClose}
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              className={classNames(styles.button, styles.confirm)}
+            >
+              Cambiar contraseña
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export { MoodalDefault, MoodalConfirm, MoodalNotice, ModalChangePassword };
