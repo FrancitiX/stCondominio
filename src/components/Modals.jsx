@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./../styles/components/Modals.module.css";
 import { InputDefault } from "./../components/Inputs";
 import classNames from "classnames";
+import { restorePass } from "../utils/user";
 
 function MoodalDefault({ title, description, status }) {
   return (
@@ -56,6 +57,11 @@ function ModalChangePassword({ title, message, status, onClose }) {
 
   const hidden = status ? styles.modalContainer : styles.hidden;
 
+  const confirm = () => {
+    restorePass(cellphone);
+    
+  };
+
   return (
     <div className={hidden}>
       <div className={styles.modal}>
@@ -89,6 +95,7 @@ function ModalChangePassword({ title, message, status, onClose }) {
             <button
               type="button"
               className={classNames(styles.button, styles.confirm)}
+              onClick={confirm}
             >
               Cambiar contraseña
             </button>

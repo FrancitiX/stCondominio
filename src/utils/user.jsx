@@ -6,7 +6,7 @@ async function log_in(number, password, remember) {
   const formData = {
     number,
     password,
-    remember
+    remember,
   };
 
   try {
@@ -41,7 +41,7 @@ async function getUser(token) {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    });  
+    });
     localStorage.setItem("userData", JSON.stringify(response.data.data));
     return response.data.data;
   } catch (error) {
@@ -51,10 +51,30 @@ async function getUser(token) {
   }
 }
 
-function getUsers(username) {}
+async function getUsers(username) {}
 
-function updateUser(username) {}
+async function updateUser(username) {}
 
-function deleteUser(username) {}
+async function deleteUser(username) {}
 
-export { log_in, register, getUser, getUsers, updateUser, deleteUser };
+async function restorePass(number) {
+  try {
+    const response = await axios.post(URI + "/restore-password", {number: number});
+    console.log(response.data);
+    alert("Se envio la solicitud para restablcer su contraseña");
+    window.location.reload();
+  } catch (error) {
+    console.error(error);
+    alert("Error al registrar usuario");
+  }
+}
+
+export {
+  log_in,
+  register,
+  getUser,
+  getUsers,
+  updateUser,
+  deleteUser,
+  restorePass,
+};
